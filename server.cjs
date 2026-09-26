@@ -65,10 +65,10 @@ app.delete('/api/data', (req, res) => {
   return res.json(appdata);
 });
 
-const distPath = path.join(__dirname, 'dist');
-app.use(express.static(distPath));
+const publicPath = path.join(__dirname, 'public');
+app.use(express.static(publicPath));
 app.get('*', (_req, res) => {
-  res.sendFile(path.join(distPath, 'index.html'), (err) => {
+  res.sendFile(path.join(publicPath, 'index.html'), (err) => {
     if (err) res.status(404).send('Build the Svelte frontend first with npm run build.');
   });
 });
