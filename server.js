@@ -5,10 +5,6 @@ const mime = require("mime");
 const dir = "public/";
 const port = process.env.PORT || 10000;
 
-app.listen(port, '0.0.0.0', () => {
-  console.log(`Server running on port ${port}`);
-});
-
 // Server-side tabular dataset.
 // Each row has 4 original fields plus a derived field (scoreLevel).
 let appdata = [
