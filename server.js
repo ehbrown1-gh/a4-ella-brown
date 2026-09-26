@@ -3,7 +3,11 @@ const fs = require("fs");
 const mime = require("mime");
 
 const dir = "public/";
-const port = 3000;
+const port = process.env.PORT || 10000;
+
+app.listen(port, '0.0.0.0', () => {
+  console.log(`Server running on port ${port}`);
+});
 
 // Server-side tabular dataset.
 // Each row has 4 original fields plus a derived field (scoreLevel).
@@ -27,7 +31,7 @@ const server = http.createServer((request, response) => {
     } else if (request.method === "DELETE") {
         handleDelete(request, response);
     } else {
-        response.writeHead(405, { "Content-Type": "application/json" });
+        response.writeHead(405, { "Content-Type": "lication/json" });
         response.end(JSON.stringify({ error: "Method not allowed" }));
     }
 });
