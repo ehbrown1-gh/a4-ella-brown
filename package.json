@@ -6,7 +6,7 @@
   "scripts": {
     "build": "rollup -c",
     "dev": "rollup -c -w",
-    "start": "node server.js"
+    "start": "node server.cjs"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^24.0.0",
